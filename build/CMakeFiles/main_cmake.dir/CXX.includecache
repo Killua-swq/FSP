@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Machine.h
+
+../include/Simulate.h
+Machine.h
+../include/Machine.h
+Workpiece.h
+../include/Workpiece.h
+
+../include/Workpiece.h
+
+/home/songwq/Documents/workspace/FSP/main.cpp
+Simulate.h
+/home/songwq/Documents/workspace/FSP/Simulate.h
+iostream
+-
+cstring
+-
+cmath
+-
+
