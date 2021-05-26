@@ -1,11 +1,12 @@
 #include "Simulate.h"
 #include <iostream>
 #include <cstring>
+#include <ctime>
 #include <cmath>
 using namespace std;
 
-const double T0 = 1200;
-const double theta = 0.99;
+const double T0 = 12000;
+const double theta = 0.80;
 
 void SA(int n, int m, int *p)
 {
@@ -23,10 +24,10 @@ void SA(int n, int m, int *p)
         // {
         //     cout << manage[i] << " ";
         // }
-        // printf("\tT:%-4.2f ans:%6d t:%6d\n", T, ans, t);
-        for (int ring = 0; ring < 500; ring++)
+        printf("\tT:%-4.2f ans:%6d\n", T, ans);
+        for (int ring = 0; ring < 1000; ring++)
         {
-            printf("\tT:%-4.2f ans:%6d t:%6d\n", T, ans, t);
+            // printf("\tT:%-4.2f ans:%6d t:%6d\n", T, ans, t);
             if (t < ans)
             {
                 ans = t;
@@ -34,7 +35,9 @@ void SA(int n, int m, int *p)
             }
             sa.randomChange();
             sa.resetNew();
+            
             new_t = sa.evaluate();
+
             if (new_t < t)
             {
                 t = new_t;
@@ -61,9 +64,9 @@ void SA(int n, int m, int *p)
         cout << manage[i] << " ";
     }
     cout << "ans: " << ans << endl;
-    sa.resetNew();
-    sa.evaluate();
-    sa.printAns();
+    // sa.resetNew();
+    // sa.evaluate();
+    // sa.printAns();
 }
 
 int main(int argc, char const *argv[])
